@@ -1,0 +1,258 @@
+---
+
+Documentação do Módulo de Formatação de Dados
+
+Este módulo fornece funções para formatar e validar diferentes tipos de dados, como textos, telefones, emails, URLs, endereços e códigos postais. Os dados podem ser capturados do usuário, formatados, exibidos e salvos em um arquivo de texto.
+
+Funções
+
+1. formatar_texto(texto)
+
+Remove espaços extras e separa o texto por palavras, depois ordena.
+
+Parâmetros:
+
+texto (str): Texto a ser formatado.
+
+
+Retorna:
+
+list: Lista de palavras ordenadas.
+
+
+Exemplo:
+
+formatar_texto("  Olá  Mundo  ")
+# Retorna: ['Mundo', 'Olá']
+
+
+---
+
+2. formatar_telefone(telefones)
+
+Encontra todos os padrões de telefone válidos e os ordena.
+
+Parâmetros:
+
+telefones (str): String contendo números de telefone.
+
+
+Retorna:
+
+list: Lista de números de telefone válidos ordenados.
+
+
+Exemplo:
+
+formatar_telefone("+55 11 91234-5678, (11) 1234-5678")
+# Retorna: ['(11) 1234-5678', '+55 11 91234-5678']
+
+
+---
+
+3. validar_digitos_telefone(telefone)
+
+Valida o número de dígitos do telefone.
+
+Parâmetros:
+
+telefone (str): Número de telefone a ser validado.
+
+
+Retorna:
+
+bool: True se o telefone tem de 10 a 15 dígitos, False caso contrário.
+
+
+Exemplo:
+
+validar_digitos_telefone("+55 11 91234-5678")
+# Retorna: True
+
+
+---
+
+4. formatar_email(emails)
+
+Encontra todos os padrões de email válidos e os ordena.
+
+Parâmetros:
+
+emails (str): String contendo endereços de email.
+
+
+Retorna:
+
+list: Lista de emails válidos ordenados.
+
+
+Exemplo:
+
+formatar_email("teste@example.com, invalid-email, valid.email@domain.com")
+# Retorna: ['teste@example.com', 'valid.email@domain.com']
+
+
+---
+
+5. validar_email(email)
+
+Valida o formato de um email.
+
+Parâmetros:
+
+email (str): Endereço de email a ser validado.
+
+
+Retorna:
+
+bool: True se o email estiver no formato correto, False caso contrário.
+
+
+Exemplo:
+
+validar_email("teste@example.com")
+# Retorna: True
+
+
+---
+
+6. formatar_url(urls)
+
+Encontra todos os padrões de URL válidos e os ordena.
+
+Parâmetros:
+
+urls (str): String contendo URLs.
+
+
+Retorna:
+
+list: Lista de URLs válidas ordenadas.
+
+
+Exemplo:
+
+formatar_url("http://example.com, https://www.test.com")
+# Retorna: ['http://example.com', 'https://www.test.com']
+
+
+---
+
+7. formatar_endereco(enderecos)
+
+Encontra e ordena endereços válidos.
+
+Parâmetros:
+
+enderecos (str): String contendo endereços.
+
+
+Retorna:
+
+list: Lista de endereços válidos ordenados.
+
+
+Exemplo:
+
+formatar_endereco("123 Rua Exemplo, 456 Avenida Teste")
+# Retorna: ['123 Rua Exemplo', '456 Avenida Teste']
+
+
+---
+
+8. formatar_codigo_postal(codigos)
+
+Encontra e ordena códigos postais válidos.
+
+Parâmetros:
+
+codigos (str): String contendo códigos postais.
+
+
+Retorna:
+
+list: Lista de códigos postais válidos ordenados.
+
+
+Exemplo:
+
+formatar_codigo_postal("12345-678, 12345")
+# Retorna: ['12345', '12345-678']
+
+
+---
+
+9. formatar_geral(entrada, tipo)
+
+Chama a função de formatação adequada com base no tipo de dado informado.
+
+Parâmetros:
+
+entrada (str): Dados a serem formatados.
+
+tipo (str): Tipo de dado (texto, telefone, email, url, endereco, codigo_postal).
+
+
+Retorna:
+
+list: Lista de dados formatados.
+
+
+Exemplo:
+
+formatar_geral("  Olá  Mundo  ", "texto")
+# Retorna: ['Mundo', 'Olá']
+
+
+---
+
+10. obter_entrada_usuario()
+
+Captura a entrada do usuário para os dados a serem formatados e o tipo de dado.
+
+Retorna:
+
+tuple: Dados de entrada e tipo.
+
+
+Exemplo:
+
+# Supondo que o usuário digite "Teste" e "texto"
+obter_entrada_usuario()
+# Retorna: ("Teste", "texto")
+
+
+---
+
+11. salvar_dados_em_arquivo(dados_formatados, tipo)
+
+Salva os dados formatados em um arquivo de texto.
+
+Parâmetros:
+
+dados_formatados (list): Lista de dados formatados.
+
+tipo (str): Tipo de dado para o nome do arquivo.
+
+
+Exemplo:
+
+salvar_dados_em_arquivo(['teste@example.com'], 'email')
+# Salva os dados em 'dados_formatados_email.txt'.
+
+
+---
+
+12. main()
+
+Função principal que coordena a execução do programa. Solicita entrada do usuário, formata os dados, exibe os resultados e oferece a opção de salvar em arquivo.
+
+
+---
+
+Considerações Finais
+
+Este módulo é útil para a manipulação e validação de dados comuns em aplicações que requerem a entrada de informações de usuários, garantindo que os dados estejam em um formato adequado para processamento posterior.
+
+
+---

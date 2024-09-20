@@ -1,0 +1,157 @@
+Este script utiliza a biblioteca openpyxl para criar e formatar uma tabela de gerenciamento em um arquivo Excel. Ele permite a entrada de dados pelo usuário, a formatação de células com base em tipos específicos (CPF, CNPJ, telefone, email), além de oferecer proteção com senha para a planilha.
+
+
+---
+
+Funções
+
+1. formatar_cpf(cpf)
+
+Formata um CPF no padrão brasileiro ###.###.###-##.
+
+Parâmetros:
+
+cpf (str): O CPF a ser formatado (apenas números).
+
+
+Retorna:
+
+str: O CPF formatado.
+
+
+Exemplo:
+
+formatar_cpf("12345678909")
+# Retorna: '123.456.789-09'
+
+
+---
+
+2. formatar_cnpj(cnpj)
+
+Formata um CNPJ no padrão brasileiro ##.###.###/####-##.
+
+Parâmetros:
+
+cnpj (str): O CNPJ a ser formatado (apenas números).
+
+
+Retorna:
+
+str: O CNPJ formatado.
+
+
+Exemplo:
+
+formatar_cnpj("12345678000195")
+# Retorna: '12.345.678/0001-95'
+
+
+---
+
+3. validar_email(email)
+
+Valida se um email está em um formato correto, usando uma expressão regular.
+
+Parâmetros:
+
+email (str): O email a ser validado.
+
+
+Retorna:
+
+bool: True se o email é válido, False se é inválido.
+
+
+Exemplo:
+
+validar_email("exemplo@dominio.com")
+# Retorna: True
+
+
+---
+
+4. formatar_telefone(telefone)
+
+Formata um número de telefone para os padrões brasileiros. Se o número tiver 11 dígitos, ele é formatado como (##) #####-####; se tiver 10 dígitos, o formato será (##) ####-####.
+
+Parâmetros:
+
+telefone (str): O número de telefone a ser formatado (apenas números).
+
+
+Retorna:
+
+str: O telefone formatado.
+
+
+Exemplo:
+
+formatar_telefone("11912345678")
+# Retorna: '(11) 91234-5678'
+
+
+---
+
+5. criar_tabela_gerenciamento()
+
+Cria uma tabela de gerenciamento em um arquivo Excel (.xlsx). Permite a entrada de cabeçalhos e dados pelo usuário, aplica formatações específicas para tipos de dados (CPF, CNPJ, telefone, email) e salva o arquivo.
+
+Fluxo Geral:
+
+1. Entrada de Cabeçalhos: O usuário insere os nomes das colunas.
+
+
+2. Entrada de Dados: Para cada coluna, o usuário pode inserir dados. A entrada pode ser múltipla (separada por ;).
+
+
+3. Formatação Automática:
+
+CPF: Formatação automática para o padrão ###.###.###-##.
+
+CNPJ: Formatação automática para o padrão ##.###.###/####-##.
+
+Telefone: Formatação automática para os padrões (##) #####-#### ou (##) ####-####.
+
+Email: Validação de formato. Emails inválidos são destacados em vermelho.
+
+
+
+4. Formatação Visual:
+
+Cabeçalhos recebem cor de fundo verde escuro e texto branco.
+
+As células de dados recebem cor de fundo verde claro e texto preto.
+
+
+
+5. Proteção da Planilha: Opcionalmente, o usuário pode definir uma senha para proteger a planilha.
+
+
+6. Salvar Arquivo: O arquivo Excel é salvo com o nome especificado pelo usuário.
+
+
+
+Exemplo de Uso:
+
+criar_tabela_gerenciamento()
+
+Ao executar essa função, o usuário interage com o terminal para inserir os cabeçalhos e os dados, resultando em um arquivo Excel formatado e pronto para uso.
+
+
+---
+
+Considerações Adicionais
+
+Validação e Formatação Automática: O script automatiza a formatação de CPFs, CNPJs, telefones e valida emails, facilitando a entrada de dados correta.
+
+Proteção Opcional: O usuário pode escolher proteger o arquivo Excel com uma senha.
+
+Interatividade: A função principal permite a inserção de dados e personalização da tabela diretamente pelo terminal.
+
+
+
+---
+
+Esse script é útil para automatizar a criação de tabelas organizacionais e gerenciais, formatando corretamente os dados de entrada e garantindo que os documentos Excel gerados sejam consistentes e bem apresentados.
+
