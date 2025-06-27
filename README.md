@@ -28,5 +28,11 @@ Este projeto permite **criar e formatar uma tabela de gerenciamento** em um arqu
 - **Python 3.x**: Certifique-se de que você tem o Python 3.x instalado. 🖥️
 - **openpyxl**: Para instalar a biblioteca `openpyxl`, execute o seguinte comando:
 
-  ```bash
+```bash
   pip install openpyxl
+```
+
+---
+
+<h2>👨‍💻 Autor</h2>
+<p><a href="https://www.linkedin.com/in/guilhermesouzadev">Guilherme Souza 💼</a></p>
